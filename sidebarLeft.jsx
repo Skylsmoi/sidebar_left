@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import ReactDOM from 'react-dom'
 import MenuNode from './menuNode.jsx'
 require('./style.styl')
 
@@ -11,7 +10,7 @@ const propTypes = {
   apiChildParameters: PropTypes.string.isRequired
 }
 
-class SidebarLeft extends React.Component {
+export class SidebarLeft extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -55,26 +54,3 @@ class SidebarLeft extends React.Component {
 }
 
 SidebarLeft.propTypes = propTypes
-
-// wrapper for app launcher (it's better to have the wrapper in a separated file but since this app can only be used for tracim, it's not required)
-const sidebarLeft = (element, nodesAreLinks, apiPath, apiParameters, apiChildPath, apiChildParameters) => {
-  const isParamValid = []
-  ;[element, nodesAreLinks, apiPath, apiParameters, apiChildPath, apiChildParameters].forEach(oneParam => isParamValid.push(oneParam === undefined))
-
-  isParamValid.includes(true)
-    ? console.error(
-      `Error : Wrong sidebarLeft() call.
-        sidebarLeft(element, nodesAreLinks, apiPath, apiParameters, apiChildPath, apiChildParameters)
-        element : DOM element (from document.getElementById). Where to place SidebarLeft app
-        nodesAreLinks : boolean. Whether nodes should be links or not (links are for the left sidebar, not links are for move folder popup)
-        apiPath : string. Api full path to get the root tree of workspaces
-        apiParameters : string. GET parameters for apiPath (must contains '?' as first char)
-        apiChildPath : string. Api full path to get the childrens of any nodes
-        apiChildParameters : string. GET parameters for apiChildPath (must contains '?' as first char)`
-    )
-    : ReactDOM.render(
-      <SidebarLeft nodesAreLinks={nodesAreLinks} apiPath={apiPath} apiParameters={apiParameters} apiChildPath={apiChildPath} apiChildParameters={apiChildParameters} />,
-      element
-    )
-}
-module.exports = sidebarLeft
