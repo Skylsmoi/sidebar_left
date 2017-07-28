@@ -10,7 +10,7 @@ const propTypes = {
   apiChildParameters: PropTypes.string.isRequired
 }
 
-class SidebarLeft extends React.Component {
+export class SidebarLeft extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -54,5 +54,3 @@ class SidebarLeft extends React.Component {
 }
 
 SidebarLeft.propTypes = propTypes
-
-module.exports = SidebarLeft
