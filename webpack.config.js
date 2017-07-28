@@ -5,10 +5,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
   entry: './sidebarLeft.jsx',
   output: {
-    libraryTarget: 'umd',
-    library: 'sidebarLeft',
     path: path.resolve(__dirname, 'lib'),
-    filename: 'sidebarleft.min.js',
+    filename: 'sidebarleft.js',
+    library: 'sidebarLeft',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [{
