@@ -7,8 +7,8 @@ module.exports = {
   output: {
     libraryTarget: 'umd',
     library: 'sidebarLeft',
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'sidebarleft.js',
+    path: path.resolve(__dirname, 'lib'),
+    filename: 'sidebarleft.min.js',
   },
   module: {
     rules: [{
