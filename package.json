@@ -1,6 +1,6 @@
 {
   "name": "tracim_sidebarleft",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "lib/sidebarleft.js",
   "scripts": {
