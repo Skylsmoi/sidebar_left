@@ -6,9 +6,10 @@ module.exports = {
   entry: './sidebarLeft.jsx',
   output: {
     path: path.resolve(__dirname, 'lib'),
-    filename: 'sidebarleft.js',
-    library: 'sidebarLeft',
+    filename: isProduction ? 'sidebarleft.min.js' : 'sidebarleft.js',
+    library: 'sidebarleft',
     libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [{
